@@ -9,15 +9,15 @@ import java.util.ArrayList;
 @RestController
 public class TodoListController {
 
-    public ArrayList<Todo> todoList;
+    public ArrayList<Todo> todoList = new ArrayList<Todo>();
 
     @PostMapping("api/todo")
     public void addTodo(Todo todo) {
-        todoList.add(todo);
+        this.todoList.add(todo);
     }
 
     @GetMapping("api/todo")
-    public ArrayList<Todo> getTodoList () {
-        return todoList;
+    public ArrayList<Todo> getTodoList() {
+        return this.todoList;
     }
 }
