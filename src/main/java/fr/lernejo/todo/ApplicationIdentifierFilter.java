@@ -21,5 +21,6 @@ public class ApplicationIdentifierFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         httpServletResponse.setHeader("Instance-Id", this.UUID);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 }

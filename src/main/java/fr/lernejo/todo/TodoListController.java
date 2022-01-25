@@ -16,11 +16,11 @@ public class TodoListController {
 
     @PostMapping("/api/todo")
     public void addTodo(@RequestBody TodoEntity todoEntity) {
-        this.todoRepository.save(todoEntity);
+        todoRepository.save(todoEntity);
     }
 
     @GetMapping("/api/todo")
     public Iterable<TodoEntity> getTodoList() {
-        return this.todoRepository.findAll();
+        return todoRepository.findAll();
     }
 }
